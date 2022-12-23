@@ -1,7 +1,7 @@
 import plStyles from "../styles/ProductList.module.css";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
+const ProductList = ({ coffeeProdList }) => {
   return (
     <div className={plStyles.container}>
       <h1 className={plStyles.title}>THE BEST COFFEE IN TOWN</h1>
@@ -12,14 +12,9 @@ const ProductList = () => {
         ex in neque malesuada finibus.
       </p>
       <div className={plStyles.wrapper}>
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
+        {coffeeProdList.map((coffee) => (
+          <ProductCard key={coffee._id} coffee={coffee} />
+        ))}
       </div>
     </div>
   );

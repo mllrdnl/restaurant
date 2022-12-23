@@ -1,15 +1,17 @@
 import Image from "next/image";
 import pcStyles from "../styles/ProductCard.module.css";
+import Link from "next/link";
 
-const ProductCard = () => {
+const ProductCard = ({ coffee }) => {
   return (
     <div className={pcStyles.container}>
-      <Image src="/img/latte.jpeg" alt="" width="500" height="500" />
-      <h1 className={pcStyles.title}>Latte</h1>
-      <span className={pcStyles.price}>$4.50</span>
-      <p className={pcStyles.desc}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
+      <Link href={`/product/${coffee._id}`}>
+        <Image src={coffee.img} alt="" width="500" height="500" />
+      </Link>
+
+      <h1 className={pcStyles.title}>{coffee.title}</h1>
+      <span className={pcStyles.price}>{coffee.price[0]}</span>
+      <p className={pcStyles.desc}>{coffee.desc}</p>
     </div>
   );
 };
