@@ -8,6 +8,7 @@ import ProductList from "../components/ProductList";
 import styles from "../styles/Home.module.css";
 
 export default function Home({ coffeeProdList }) {
+  console.log(coffeeProdList);
   return (
     <div className={styles.container}>
       <Head>

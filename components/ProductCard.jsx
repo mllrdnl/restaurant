@@ -10,7 +10,7 @@ const ProductCard = ({ coffee }) => {
       </Link>
 
       <h1 className={pcStyles.title}>{coffee.title}</h1>
-      <span className={pcStyles.price}>{coffee.price[0]}</span>
+      <span className={pcStyles.price}>{coffee.prices[0]}</span>
       <p className={pcStyles.desc}>{coffee.desc}</p>
     </div>
   );
