@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { useSelector } from "react-redux";
 import navbarStyles from "../styles/Navbar.module.css";
 
@@ -37,17 +38,19 @@ const Navbar = () => {
           <li className={navbarStyles.listItem}>Contact</li>
         </ul>
       </div>
-      <div className={navbarStyles.item}>
-        <div className={navbarStyles.cart}>
-          <Image
-            src="/img/cartwhite.png"
-            alt="circular logo that says coffee shop with a ring around that looks like spilled coffee"
-            width="40px"
-            height="40px"
-          />
-          <div className={navbarStyles.counter}>{quantity}</div>
+      <Link href="/cart" passHref>
+        <div className={navbarStyles.item}>
+          <div className={navbarStyles.cart}>
+            <Image
+              src="/img/cartwhite.png"
+              alt="circular logo that says coffee shop with a ring around that looks like spilled coffee"
+              width="40px"
+              height="40px"
+            />
+            <div className={navbarStyles.counter}>{quantity}</div>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
