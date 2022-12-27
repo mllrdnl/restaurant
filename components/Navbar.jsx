@@ -24,7 +24,9 @@ const Navbar = () => {
       </div>
       <div className={navbarStyles.item}>
         <ul className={navbarStyles.list}>
-          <li className={navbarStyles.listItem}>Homepage</li>
+          <Link href="/" passHref>
+            <li className={navbarStyles.listItem}>Homepage</li>
+          </Link>
           <li className={navbarStyles.listItem}>Products</li>
           <li className={navbarStyles.listItem}>Menu</li>
           <Image
