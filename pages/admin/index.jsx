@@ -116,7 +116,18 @@ const Index = ({ products, orders }) => {
   );
 };
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
+  const myCookie = ctx.req?.cookies || "";
+  if (myCookie.token !== process.env.TOKEN) {
+    return {
+      //redirect from NextJS
+      redirect: {
+        destination: "/admin/login",
+        permanent: false,
+      },
+    };
+  }
+
   const productRes = await axios.get("http://localhost:3000/api/product");
   const orderRes = await axios.get("http://localhost:3000/api/orders");
 
